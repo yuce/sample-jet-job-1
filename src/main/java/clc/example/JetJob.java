@@ -13,6 +13,7 @@ public class JetJob {
         pipeline.readFrom(TestSources.itemStream(1))
                 .withoutTimestamps()
                 .map(e -> new Hashids(salt).encode(e.sequence()))
+                .map(id -> String.format("\n\n=== ID: %s ===\n\n", id))
                 .writeTo(Sinks.logger());
         var hz = Hazelcast.bootstrappedInstance();
         hz.getJet().newJob(pipeline);
