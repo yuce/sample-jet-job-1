@@ -11,7 +11,7 @@ import java.util.AbstractMap;
 public class JetJob {
     public static void main(String[] args) {
         final var salt = (args.length > 0)? args[0] : "my-salt";
-        final var mapName = (args.length > 1)? args[1] : "hashids-map";
+        final var mapName = (args.length > 1)? args[1] : "my-map";
         var pipeline = Pipeline.create();
         pipeline.readFrom(TestSources.itemStream(1))
                 .withoutTimestamps()
