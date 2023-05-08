@@ -4,10 +4,10 @@
 
 Requirements:
 
-1. Java 11
+1. Java 11 or better.
 
 ```
-$ ./gradlew build
+$ make
 ```
 
 That will create the `./build/libs/sample-job-1-1.0-SNAPSHOT-all.jar` file.
@@ -17,10 +17,9 @@ That will create the `./build/libs/sample-job-1-1.0-SNAPSHOT-all.jar` file.
 Using [CLC](https://github.com/hazelcast/hazelcast-commandline-client):
 
 ```
-$ clc -c CONFIG_NAME job submit --class clc.example.JetJob --name j1 ./build/libs/sample-job-1-1.0-SNAPSHOT-all.jar URL1 URL2 ...
+$ clc -c CONFIG_NAME job submit --name j1 ./build/libs/sample-job-1-1.0-SNAPSHOT-all.jar MY-SALT MY-MAP
 ```
 
-Titles of the HTML documents will be printed in the member logs.
-
+Hashids will be creted with salt `MY-SALT` and the output is saved to map `MY-MAP`.
 
 
