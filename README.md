@@ -17,7 +17,7 @@ That will create the `./build/libs/sample-job-1-1.0-SNAPSHOT-all.jar` file.
 Using [CLC](https://github.com/hazelcast/hazelcast-commandline-client):
 
 ```
-$ clc -c CONFIG_NAME job submit --name j1 ./build/libs/sample-job-1-1.0-SNAPSHOT-all.jar MY-SALT MY-MAP
+$ clc -c CONFIG_NAME job submit --name j1 ./build/libs/sample-job-1-1.0-SNAPSHOT-all.jar MY-MAP MY-SALT
 ```
 
 Hashids will be creted with salt `MY-SALT` and the output is saved to map `MY-MAP`.
