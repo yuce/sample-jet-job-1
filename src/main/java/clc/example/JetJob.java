@@ -11,8 +11,8 @@ import java.util.AbstractMap;
 
 public class JetJob {
     public static void main(String[] args) {
-        final String salt = (args.length > 0)? args[0] : "my-salt";
-        final String mapName = (args.length > 1)? args[1] : "my-map";
+        final String mapName = (args.length > 0)? args[0] : "my-map";
+        final String salt = (args.length > 1)? args[1] : "my-salt";
         Pipeline pipeline = Pipeline.create();
         pipeline.readFrom(TestSources.itemStream(1))
                 .withoutTimestamps()
